@@ -1,0 +1,8 @@
+xpath:
+  LOCATOR_LOGIN: //*[@id="login"]/div[1]/label/input
+  LOCATOR_PASS: //*[@id="login"]/div[2]/label/input
+  LOCATOR_ABOUT_BTN: //*[@id="app"]/main/nav/ul/li[1]/a
+  HEADER_ABOUT: //*[@id="app"]/main/div/div/h1
+  
+css:
+  LOCATOR_LOGIN_BTN: button
