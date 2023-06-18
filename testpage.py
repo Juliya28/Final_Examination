@@ -58,9 +58,25 @@ class Operations(BasePage, TestLocators):
             btn2.click()
         else:
             logging.error('Кнопка "About" не найдена')
-            
-    def header_about(self):
-        logging.debug('Header size check')
-        h_about = self.find_element(self.ids['HEADER_ABOUT']).value_of_css_property('font-size')
-        return h_about    
-        
+             
+    
+    def get_about_page_text(self):
+        about_page = self.find_element(self.ids['HEADER_ABOUT'])
+        if about_page:
+            text = about_page.text
+            logging.info('Указан заголовок About Page')
+        else:
+            logging.error('Отображается другой заголовок, не About Page')
+            text = None
+        return text
+
+
+    def check_about_page_title_font_size(self):
+        title = self.find_element(self.ids['HEADER_ABOUT'])
+        font_size = title.value_of_css_property('font-size')
+        if font_size == "32px":
+            logging.info(f'Шрифт заголовка About Page {font_size}')
+            return True
+        else:
+            logging.error(f'Шрифт заголовка "About" Page не равен 32px')
+            return False    

@@ -35,3 +35,12 @@ def browser():
     driver = webdriver.Chrome(service=service, options=options)
     yield driver
     driver.quit()
+
+@pytest.fixture()
+def about_page():
+    return 'About Page'
+
+
+@pytest.fixture()
+def font_size():
+    return '32px'
